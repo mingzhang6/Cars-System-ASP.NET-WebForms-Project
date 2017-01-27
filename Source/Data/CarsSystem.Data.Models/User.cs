@@ -19,18 +19,31 @@ namespace CarsSystem.Data.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [MinLength(5)]
+        [MaxLength(20)]
         public string FirstName { get; set; }
 
+        [Required]
+        [MinLength(5)]
+        [MaxLength(20)]
         public string SecondName { get; set; }
 
+        [Required]
+        [MinLength(5)]
+        [MaxLength(20)]
         public string LastName { get; set; }
 
+        [Required]
         public long EGN { get; set; }
 
+        [Required]
         public int NumberOfIdCard { get; set; }
 
+        [Required]
         public DateTime DateOfIssue { get; set; }
 
+        [Required]
         public int PhoneNumber { get; set; }
 
         public Role Role { get; set; }
