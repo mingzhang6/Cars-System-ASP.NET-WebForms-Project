@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarsSystem.Data
 {
-    public class CarsSystemDbContext : DbContext
+    public class CarsSystemDbContext : DbContext, ICarsSystemDbContext
     {
         public CarsSystemDbContext()
             : base("CarsSystem")
