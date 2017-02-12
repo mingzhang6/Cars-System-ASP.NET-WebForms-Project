@@ -51,8 +51,6 @@ namespace CarsSystem.Data.Models
         [Required]
         public int PhoneNumber { get; set; }
 
-        public Role Role { get; set; }
-
         public virtual ICollection<Car> Cars
         {
             get { return this.cars; }
