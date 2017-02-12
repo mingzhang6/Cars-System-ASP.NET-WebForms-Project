@@ -1,5 +1,8 @@
 namespace CarsSystem.Data.Migrations
 {
+    using Common;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,18 +18,24 @@ namespace CarsSystem.Data.Migrations
 
         protected override void Seed(CarsSystemDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            this.SeedRoles(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedRoles(CarsSystemDbContext context)
+        {
+            if (!context.Roles.Any())
+            {
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+                var adminRole = new IdentityRole { Name = ApplicationConstants.AdminRole };
+                roleManager.Create(adminRole);
+
+                var userRole = new IdentityRole { Name = ApplicationConstants.UserRole };
+                roleManager.Create(userRole);
+
+                context.SaveChanges();
+            }
         }
     }
 }
