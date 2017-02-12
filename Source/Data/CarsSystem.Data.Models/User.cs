@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CarsSystem.Data.Models
 {
-    public class User
+    public class User : IdentityUser
     {
         private ICollection<Car> cars;
 
@@ -15,9 +18,6 @@ namespace CarsSystem.Data.Models
         {
             this.cars = new HashSet<Car>();
         }
-
-        [Key]
-        public int Id { get; set; }
 
         [Required]
         [MinLength(5)]
@@ -49,12 +49,25 @@ namespace CarsSystem.Data.Models
         public string City { get; set; }
 
         [Required]
-        public int PhoneNumber { get; set; }
+        public override string PhoneNumber { get; set; }
 
         public virtual ICollection<Car> Cars
         {
             get { return this.cars; }
             set { this.cars = value; }
+        }
+
+        public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
+
+        public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
+        {
+            return Task.FromResult(GenerateUserIdentity(manager));
         }
     }
 }

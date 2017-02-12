@@ -32,14 +32,15 @@ namespace CarsSystem.Data.Models
         public string RegistrationNumber { get; set; }
 
         [Required]
-        [Index(IsUnique =true)]
-        [Range(17,17)]
+        [Index(IsUnique = true)]
+        [MinLength(17)]
+        [MaxLength(17)]
         public string VINNumber { get; set; }
 
-        [Range(2,10)]
+        [Range(2, 10)]
         public byte CountOfTyres { get; set; }
 
-        [Range(2,6)]
+        [Range(2, 6)]
         public byte CountOfDoors { get; set; }
 
         [Required]
