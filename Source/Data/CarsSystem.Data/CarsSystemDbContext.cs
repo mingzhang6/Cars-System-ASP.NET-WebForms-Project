@@ -19,5 +19,10 @@ namespace CarsSystem.Data
         public virtual IDbSet<User> Users { get; set; }
 
         public virtual IDbSet<Car> Cars { get; set; }
+
+        public static CarsSystemDbContext Create()
+        {
+            return new CarsSystemDbContext();
+        }
     }
 }
