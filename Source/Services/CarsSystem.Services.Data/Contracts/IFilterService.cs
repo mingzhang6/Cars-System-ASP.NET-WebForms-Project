@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarsSystem.Services.Data
+namespace CarsSystem.Services.Data.Contracts
 {
-    public class Class1
+    public interface IFilterService
     {
     }
 }
