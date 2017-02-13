@@ -1,12 +1,11 @@
-﻿using System;
+﻿using CarsSystem.Data.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarsSystem.Services.Data.Contracts
 {
     public interface IUsersService
     {
+        IEnumerable<User> GetAllUsers();
+        User GetUserById(string id);
     }
 }
