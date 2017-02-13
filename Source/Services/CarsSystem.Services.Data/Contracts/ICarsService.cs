@@ -1,12 +1,11 @@
-﻿using System;
+﻿using CarsSystem.Data.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarsSystem.Services.Data.Contracts
 {
     public interface ICarsService
     {
+        IEnumerable<Car> GetAllCars();
+        Car GetCarById(int id);
     }
 }
