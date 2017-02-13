@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarsSystem.Services.Data
 {
-    public class AdminService : IAdminService
+    public class MailService : IMailService
     {
     }
 }
