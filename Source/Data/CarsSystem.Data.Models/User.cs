@@ -18,6 +18,8 @@ namespace CarsSystem.Data.Models
         {
             this.cars = new HashSet<Car>();
         }
+        [Key]
+        public override string Id { get; set; }
 
         [Required]
         [MinLength(5)]
