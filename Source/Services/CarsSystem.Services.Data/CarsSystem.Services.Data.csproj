@@ -45,12 +45,23 @@
     <Compile Include="Contracts\IAdminService.cs" />
     <Compile Include="Contracts\ICarsService.cs" />
     <Compile Include="Contracts\IFilterService.cs" />
+    <Compile Include="Contracts\IMailService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="FilterService.cs" />
+    <Compile Include="MailService.cs" />
     <Compile Include="UsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\CarsSystem.Data.Models\CarsSystem.Data.Models.csproj">
+      <Project>{169f5636-2ce7-47e4-88de-9deb109e1cac}</Project>
+      <Name>CarsSystem.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\CarsSystem.Data\CarsSystem.Data.csproj">
+      <Project>{a13a0d1f-bb4c-4d2b-844d-361bdc8f981b}</Project>
+      <Name>CarsSystem.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
