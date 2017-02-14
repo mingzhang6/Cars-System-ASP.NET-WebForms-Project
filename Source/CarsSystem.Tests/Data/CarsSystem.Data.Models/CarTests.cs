@@ -7,6 +7,9 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
     [TestFixture]
     public class CarTests
     {
+        private double expectedVINNumber;
+        private double expectedCountOfTyres;
+
         [Test]
         public void Car_ShouldCreateInstanceOfClassCorrectly()
         {
@@ -121,6 +124,94 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
             var expectedValidUntilInsurance = "1.1.0001 г. 0:00:00";
 
             Assert.AreEqual(expectedValidUntilInsurance, actualValidUntilInsurance);
+        }
+
+        [Test]
+        public void Car_ShouldSetsManufacturerField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.Manufacturer = "VW";
+
+            var expectedManufacturer = "VW";
+
+            Assert.AreEqual(expectedManufacturer, car.Manufacturer);
+        }
+
+        [Test]
+        public void Car_ShouldSetsModelField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.Model = "Golf";
+
+            var expectedModel = "Golf";
+
+            Assert.AreEqual(expectedModel, car.Model);
+        }
+
+        [Test]
+        public void Car_ShouldSetsSpecificTypeOfEngineField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.TypeOfEngine = EngineType.Diesel;
+
+            var expectedEngineType = EngineType.Diesel;
+
+            Assert.AreEqual(expectedEngineType, car.TypeOfEngine);
+        }
+
+        [Test]
+        public void Car_ShouldSetsSpecificRegistrationNumberField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.RegistrationNumber = "Tosharata";
+
+            var expectedRegistrationNumber = "Tosharata";
+
+            Assert.AreEqual(expectedRegistrationNumber, car.RegistrationNumber);
+        }
+
+        [Test]
+        public void Car_ShouldSetsSpecificVINNumberField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.VINNumber = "Tosharata12345678";
+
+            var expectedVINNumber = "Tosharata12345678";
+
+            Assert.AreEqual(expectedVINNumber, car.VINNumber);
+        }
+
+        [Test]
+        public void Car_ShouldSetsCountOfTyresField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.CountOfTyres = 3;
+
+            var expectedCountOfTyres = 3;
+
+            Assert.AreEqual(expectedCountOfTyres, car.CountOfTyres);
+        }
+
+        [Test]
+        public void Car_ShouldSetsCountOfDoorsField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.CountOfDoors = 4;
+
+            var expectedCountOfDoors = 4;
+
+            Assert.AreEqual(expectedCountOfDoors, car.CountOfDoors);
+        }
+
+        [Test]
+        public void Car_ShouldSetsTypeOfCarField_WhenInstantiedNewCar()
+        {
+            var car = new Car();
+            car.TypeOfCar = CarType.Taxi;
+
+            var expectedTypeOfCar = CarType.Taxi;
+
+            Assert.AreEqual(expectedTypeOfCar, car.TypeOfCar);
         }
     }
 }
