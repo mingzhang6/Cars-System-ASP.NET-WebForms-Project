@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Data", "Data\Car
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Data.Models", "Data\CarsSystem.Data.Models\CarsSystem.Data.Models.csproj", "{169F5636-2CE7-47E4-88DE-9DEB109E1CAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Data.ConsoleClient", "Data\CarsSystem.Data.ConsoleClient\CarsSystem.Data.ConsoleClient.csproj", "{D6138110-0410-4534-BD10-ADBECE3BB581}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BD705E22-A23D-46A3-9A46-C5FBEACD2C4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F4747700-A6CA-44A7-8876-E47941D6D34F}"
@@ -18,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Services.Data", "Services\CarsSystem.Services.Data\CarsSystem.Services.Data.csproj", "{193C089C-A633-432D-B8D8-BE71BA3C73B6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6F88736B-4C7A-4B17-9BE6-668AE7DB3021}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{E89D617D-1413-471C-ABC5-A527EC8AD62B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.WebForms.Client", "CarsSystem.WebForms.Client\CarsSystem.WebForms.Client.csproj", "{4C1C1ADA-0138-4C07-9504-92109EF32A04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +35,6 @@ Global
 		{169F5636-2CE7-47E4-88DE-9DEB109E1CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{169F5636-2CE7-47E4-88DE-9DEB109E1CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{169F5636-2CE7-47E4-88DE-9DEB109E1CAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6138110-0410-4534-BD10-ADBECE3BB581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6138110-0410-4534-BD10-ADBECE3BB581}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6138110-0410-4534-BD10-ADBECE3BB581}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6138110-0410-4534-BD10-ADBECE3BB581}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4747700-A6CA-44A7-8876-E47941D6D34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4747700-A6CA-44A7-8876-E47941D6D34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4747700-A6CA-44A7-8876-E47941D6D34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +43,10 @@ Global
 		{193C089C-A633-432D-B8D8-BE71BA3C73B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{193C089C-A633-432D-B8D8-BE71BA3C73B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{193C089C-A633-432D-B8D8-BE71BA3C73B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,8 +54,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A13A0D1F-BB4C-4D2B-844D-361BDC8F981B} = {BD705E22-A23D-46A3-9A46-C5FBEACD2C4F}
 		{169F5636-2CE7-47E4-88DE-9DEB109E1CAC} = {BD705E22-A23D-46A3-9A46-C5FBEACD2C4F}
-		{D6138110-0410-4534-BD10-ADBECE3BB581} = {BD705E22-A23D-46A3-9A46-C5FBEACD2C4F}
 		{F4747700-A6CA-44A7-8876-E47941D6D34F} = {5C62DCC4-9F9A-4CE1-A3BF-3C5DD4A4BA76}
 		{193C089C-A633-432D-B8D8-BE71BA3C73B6} = {6F88736B-4C7A-4B17-9BE6-668AE7DB3021}
+		{4C1C1ADA-0138-4C07-9504-92109EF32A04} = {E89D617D-1413-471C-ABC5-A527EC8AD62B}
 	EndGlobalSection
 EndGlobal
