@@ -3,40 +3,19 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
+        <h2><strong>ASP.NET Web Forms Cars system application.</strong></h2>
+        <p class="lead">
+            This is application made on ASP .NET Web Forms. 
+            It's purpose is to collect information about customers and their cars information.
+            The application has administration panel and only user with role "Admin", can add information, about given customer and his car.
+            The specific in this application is that the administrator of the application can filter cars by mannual check up, vignette and insurance expiration and on that base to send emails to thoose customers, which expiration is soon.
+        </p>
+        <h3><strong>Roles in the application and what can they visit.</strong></h3>
+        <ul style="list-style-type: circle">
+            <li>Admin - can visit all pages in the application.</li>
+            <li>Regular user - can visit home, about, profile pages.</li>
+            <li>Not registered user - can see only about and home page</li>
+        </ul>
     </div>
 
 </asp:Content>
