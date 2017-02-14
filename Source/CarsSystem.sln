@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{E89D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.WebForms.Client", "CarsSystem.WebForms.Client\CarsSystem.WebForms.Client.csproj", "{4C1C1ADA-0138-4C07-9504-92109EF32A04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSystem.Tests", "CarsSystem.Tests\CarsSystem.Tests.csproj", "{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C1C1ADA-0138-4C07-9504-92109EF32A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82C85D8-F36D-41BF-9C9D-4482CC6E336E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
