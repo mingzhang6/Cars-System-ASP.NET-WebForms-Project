@@ -7,9 +7,6 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
     [TestFixture]
     public class CarTests
     {
-        private double expectedVINNumber;
-        private double expectedCountOfTyres;
-
         [Test]
         public void Car_ShouldCreateInstanceOfClassCorrectly()
         {
@@ -127,88 +124,88 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
         }
 
         [Test]
-        public void Car_ShouldSetsManufacturerField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsManufacturerField_Correctly()
         {
             var car = new Car();
-            car.Manufacturer = "VW";
 
+            car.Manufacturer = "VW";
             var expectedManufacturer = "VW";
 
             Assert.AreEqual(expectedManufacturer, car.Manufacturer);
         }
 
         [Test]
-        public void Car_ShouldSetsModelField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsModelField_Correctly()
         {
             var car = new Car();
-            car.Model = "Golf";
 
+            car.Model = "Golf";
             var expectedModel = "Golf";
 
             Assert.AreEqual(expectedModel, car.Model);
         }
 
         [Test]
-        public void Car_ShouldSetsSpecificTypeOfEngineField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsSpecificTypeOfEngineField_Correctly()
         {
             var car = new Car();
-            car.TypeOfEngine = EngineType.Diesel;
 
+            car.TypeOfEngine = EngineType.Diesel;
             var expectedEngineType = EngineType.Diesel;
 
             Assert.AreEqual(expectedEngineType, car.TypeOfEngine);
         }
 
         [Test]
-        public void Car_ShouldSetsSpecificRegistrationNumberField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsSpecificRegistrationNumberField_Correctly()
         {
             var car = new Car();
-            car.RegistrationNumber = "Tosharata";
 
+            car.RegistrationNumber = "Tosharata";
             var expectedRegistrationNumber = "Tosharata";
 
             Assert.AreEqual(expectedRegistrationNumber, car.RegistrationNumber);
         }
 
         [Test]
-        public void Car_ShouldSetsSpecificVINNumberField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsSpecificVINNumberField_Correctly()
         {
             var car = new Car();
-            car.VINNumber = "Tosharata12345678";
 
+            car.VINNumber = "Tosharata12345678";
             var expectedVINNumber = "Tosharata12345678";
 
             Assert.AreEqual(expectedVINNumber, car.VINNumber);
         }
 
         [Test]
-        public void Car_ShouldSetsCountOfTyresField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsCountOfTyresField_Correctly()
         {
             var car = new Car();
-            car.CountOfTyres = 3;
 
+            car.CountOfTyres = 3;
             var expectedCountOfTyres = 3;
 
             Assert.AreEqual(expectedCountOfTyres, car.CountOfTyres);
         }
 
         [Test]
-        public void Car_ShouldSetsCountOfDoorsField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsCountOfDoorsField_Correctly()
         {
             var car = new Car();
-            car.CountOfDoors = 4;
 
+            car.CountOfDoors = 4;
             var expectedCountOfDoors = 4;
 
             Assert.AreEqual(expectedCountOfDoors, car.CountOfDoors);
         }
 
         [Test]
-        public void Car_ShouldSetsTypeOfCarField_WhenInstantiedNewCar()
+        public void Car_ShouldSetsTypeOfCarField_Correctly()
         {
             var car = new Car();
-            car.TypeOfCar = CarType.Taxi;
 
+            car.TypeOfCar = CarType.Taxi;
             var expectedTypeOfCar = CarType.Taxi;
 
             Assert.AreEqual(expectedTypeOfCar, car.TypeOfCar);
