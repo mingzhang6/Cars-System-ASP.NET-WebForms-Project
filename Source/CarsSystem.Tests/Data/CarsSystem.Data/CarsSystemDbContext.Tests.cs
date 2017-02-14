@@ -24,20 +24,20 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
             Assert.IsInstanceOf<ICarsSystemDbContext>(db);
         }
 
-        //[Test]
-        //public void CarsSystemDbContext_CreateMethodShouldReturnInstanceOfCarsDbContext()
-        //{
-        //    var db = CarsSystemDbContext.Create();
+        [Test]
+        public void CarsSystemDbContext_CreateMethodShouldReturnInstanceOfCarsDbContext()
+        {
+            var db = CarsSystemDbContext.Create();
 
-        //    Assert.IsInstanceOf<CarsSystemDbContext>(db);
-        //}
+            Assert.IsInstanceOf<CarsSystemDbContext>(db);
+        }
 
-        //[Test]
-        //public void CarsSystemDbContext_CreateMethodShouldReturnInstanceOfICarsDbContext()
-        //{
-        //    var db = CarsSystemDbContext.Create();
+        [Test]
+        public void CarsSystemDbContext_CreateMethodShouldReturnInstanceOfICarsDbContext()
+        {
+            var db = CarsSystemDbContext.Create();
 
-        //    Assert.IsInstanceOf<ICarsSystemDbContext>(db);
-        //}
+            Assert.IsInstanceOf<ICarsSystemDbContext>(db);
+        }
     }
 }
