@@ -7,5 +7,6 @@ namespace CarsSystem.Services.Data.Contracts
     {
         IEnumerable<Car> GetAllCars();
         Car GetCarById(int id);
+        void AddCar(Car carToAdd);
     }
 }

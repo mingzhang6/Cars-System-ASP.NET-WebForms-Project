@@ -32,5 +32,11 @@ namespace CarsSystem.Services.Data
         {
             return this.carRepo.GetById(id);
         }
+
+        public void AddCar(Car carToAdd)
+        {
+            this.carRepo.Add(carToAdd);
+            this.carRepo.SaveChanges();
+        }
     }
 }
