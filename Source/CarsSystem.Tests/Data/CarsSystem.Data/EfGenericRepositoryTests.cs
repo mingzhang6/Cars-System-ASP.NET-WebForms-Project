@@ -8,7 +8,7 @@ using Moq;
 namespace CarsSystem.Tests.Data.CarsSystem.Data
 {
     [TestFixture]
-    public class UnitTest2
+    public class EfGenericRepositoryTests
     {
         [Test]
         public void EfGenericRepository_ShouldThrowArgumentNullException_WhenThePassedContextIsNull()

@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity;
 namespace CarsSystem.Tests.Data.CarsSystem.Data
 {
     [TestFixture]
-    public class UnitTest1
+    public class CarsSystemDbContextTests
     {
         [Test]
         public void CarsSystemDbContext_ShouldCreateInstanceOfDatabase()
