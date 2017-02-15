@@ -15,8 +15,6 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         [Test]
         public void CarsService_ShouldThrowArgumentNullException_WhenPassedRepositoryIsNull()
         {
-            //var data = new Mock<ICarsSystemDbContext>();
-            //var mockedRepository = new Mock<IRepository<Car>>();
             IRepository<Car> mockedRepository = null;
 
             Assert.Throws<ArgumentException>(() => new CarsService(mockedRepository));
