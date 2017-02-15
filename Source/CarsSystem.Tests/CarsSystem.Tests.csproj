@@ -85,6 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CarsSystem.Services.Data\CarsServiceTests.cs" />
     <Compile Include="Services\CarsSystem.Services.Data\FilterServiceTests.cs" />
+    <Compile Include="Services\CarsSystem.Services.Data\AdminServiceTests.cs" />
     <Compile Include="Services\CarsSystem.Services.Data\UserServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
