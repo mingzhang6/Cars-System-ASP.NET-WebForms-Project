@@ -14,12 +14,12 @@ namespace CarsSystem.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MinLength(3)]
+        [MinLength(2)]
         [MaxLength(20)]
         public string Manufacturer { get; set; }
 
         [Required]
-        [MinLength(3)]
+        [MinLength(2)]
         [MaxLength(20)]
         public string Model { get; set; }
 
