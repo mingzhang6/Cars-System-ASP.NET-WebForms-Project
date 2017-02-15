@@ -36,3 +36,7 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+.my-width {
+    max-width: 400px !important; 
+}
