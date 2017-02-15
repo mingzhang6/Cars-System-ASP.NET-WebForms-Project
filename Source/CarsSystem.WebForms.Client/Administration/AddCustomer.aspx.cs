@@ -101,7 +101,7 @@ namespace CarsSystem.WebForms.Client.Administration
             }
             else
             {
-                //kur bate... :/
+                // does not work
             }
         }
     }

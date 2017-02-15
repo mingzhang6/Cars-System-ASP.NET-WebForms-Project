@@ -31,6 +31,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox UsernameTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// FirstNameLabel control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FirstNameTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// SecondNameLabel control.
@@ -67,6 +85,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox SecondNameTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
         /// LastNameLabel control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LastNameTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
         /// EGNLabel1 control.
@@ -103,6 +139,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox EGNTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
         /// NumberOfIdCardLabel control.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NumberOfIdCardTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
         /// IssueLabel control.
@@ -139,6 +193,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox IssueTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        
+        /// <summary>
         /// CityLabel control.
         /// </summary>
         /// <remarks>
@@ -155,6 +218,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CityTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
         
         /// <summary>
         /// PhoneLabel control.
@@ -175,6 +247,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox PhoneTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
+        
+        /// <summary>
         /// EmailLabel control.
         /// </summary>
         /// <remarks>
@@ -191,6 +272,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
         
         /// <summary>
         /// ManufacturerLabel control.
@@ -211,6 +301,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox ManufacturerTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator11;
+        
+        /// <summary>
         /// ModelLabel control.
         /// </summary>
         /// <remarks>
@@ -227,6 +326,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ModelTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
         
         /// <summary>
         /// TypeOFEngineLabel control.
@@ -247,6 +355,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.DropDownList TypeOFEngineDropDownList;
         
         /// <summary>
+        /// RequiredFieldValidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator13;
+        
+        /// <summary>
         /// RegistrationLabel control.
         /// </summary>
         /// <remarks>
@@ -263,6 +380,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox RegistrationTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
         
         /// <summary>
         /// VINLabel control.
@@ -283,6 +409,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox VINTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator15;
+        
+        /// <summary>
         /// CountOfTyresLabel control.
         /// </summary>
         /// <remarks>
@@ -299,6 +434,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CountOfTyresTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator16;
         
         /// <summary>
         /// CountOfDoorsLabel control.
@@ -319,6 +463,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox CountOfDoorsTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator17;
+        
+        /// <summary>
         /// TypeOfCarLabel control.
         /// </summary>
         /// <remarks>
@@ -335,6 +488,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList TypeOfCarDropDownList;
+        
+        /// <summary>
+        /// RequiredFieldValidator18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator18;
         
         /// <summary>
         /// ManufactoringYearLabel control.
@@ -355,6 +517,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox ManufactoringYearTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator19;
+        
+        /// <summary>
         /// CheckUpLabel control.
         /// </summary>
         /// <remarks>
@@ -371,6 +542,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CheckUpTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator20;
         
         /// <summary>
         /// VignetteLabel control.
@@ -391,6 +571,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         protected global::System.Web.UI.WebControls.TextBox VignetteTextBox;
         
         /// <summary>
+        /// RequiredFieldValidator21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator21;
+        
+        /// <summary>
         /// InsuranceLabel control.
         /// </summary>
         /// <remarks>
@@ -407,6 +596,15 @@ namespace CarsSystem.WebForms.Client.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox InsuranceTextBox;
+        
+        /// <summary>
+        /// RequiredFieldValidator22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator22;
         
         /// <summary>
         /// AddInfo control.
