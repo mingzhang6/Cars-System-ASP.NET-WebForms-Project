@@ -80,9 +80,10 @@
   <ItemGroup>
     <Compile Include="Data\CarsSystem.Data.Models\CarTests.cs" />
     <Compile Include="Data\CarsSystem.Data.Models\UserTests.cs" />
-    <Compile Include="Data\CarsSystem.Data\CarsSystemDbContext.Tests.cs" />
-    <Compile Include="Data\CarsSystem.Data\EfGenericRepository.Tests.cs" />
+    <Compile Include="Data\CarsSystem.Data\CarsSystemDbContextTests.cs" />
+    <Compile Include="Data\CarsSystem.Data\EfGenericRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CarsSystem.Services.Data\CarsServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,6 +97,10 @@
     <ProjectReference Include="..\Data\CarsSystem.Data\CarsSystem.Data.csproj">
       <Project>{a13a0d1f-bb4c-4d2b-844d-361bdc8f981b}</Project>
       <Name>CarsSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\CarsSystem.Services.Data\CarsSystem.Services.Data.csproj">
+      <Project>{193c089c-a633-432d-b8d8-be71ba3c73b6}</Project>
+      <Name>CarsSystem.Services.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
