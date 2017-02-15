@@ -2,6 +2,10 @@
 using CarsSystem.Data.Models;
 using CarsSystem.Data.Repositories;
 using CarsSystem.Services.Data;
+using CarsSystem.WebForms.Client.Helpers;
+using Common;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +55,54 @@ namespace CarsSystem.WebForms.Client.Administration
             string phoneNumber = this.PhoneTextBox.Text;
             string email = this.EmailTextBox.Text;
 
+
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
+            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+
+            var userToAdd = new User()
+            {
+                UserName = username,
+                FirstName = firstName,
+                SecondName = secondName,
+                LastName = lastName,
+                EGN = egn,
+                NumberOfIdCard = numberOfIdCard,
+                DateOfIssue = dateOfIssue,
+                City = city,
+                PhoneNumber = phoneNumber,
+                Email = email
+            };
+
+            IdentityResult result = manager.Create(userToAdd, "123456");
+
+            var carToAdd = new Car()
+            {
+                Manufacturer = manufacturer,
+                Model = model,
+                TypeOfEngine = typeOfEngine,
+                RegistrationNumber = registrationNumber,
+                VINNumber = vinNumber,
+                CountOfTyres = countOfTyres,
+                CountOfDoors = countOfDoors,
+                TypeOfCar = typeOfCar,
+                YearOfManufacturing = yearOfManufactoring,
+                ValidUntilAnnualCheckUp = validUntilAnnualCheckUp,
+                ValidUntilVignette = validUntilVignette,
+                ValidUntilInsurance = validUntilInsurance,
+                UserId = userToAdd.Id
+            };
+
+            if (result.Succeeded)
+            {
+                manager.AddToRole(userToAdd.Id, ApplicationConstants.UserRole);
+                signInManager.SignIn(userToAdd, isPersistent: false, rememberBrowser: false);
+                service.AddCar(carToAdd);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+            }
+            else
+            {
+                //kur bate... :/
+            }
         }
     }
 }

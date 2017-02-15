@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using CarsSystem.WebForms.Client.Models;
+using CarsSystem.WebForms.Client.Helpers;
 
 namespace CarsSystem.WebForms.Client.Account
 {
@@ -22,7 +22,7 @@ namespace CarsSystem.WebForms.Client.Account
             string userId = IdentityHelper.GetUserIdFromRequest(Request);
             if (code != null && userId != null)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 var result = manager.ConfirmEmail(userId, code);
                 if (result.Succeeded)
                 {

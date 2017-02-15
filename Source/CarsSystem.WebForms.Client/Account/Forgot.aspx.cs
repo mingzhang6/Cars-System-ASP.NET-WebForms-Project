@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using CarsSystem.WebForms.Client.Models;
+using CarsSystem.Data.Models;
 
 namespace CarsSystem.WebForms.Client.Account
 {
@@ -19,8 +19,8 @@ namespace CarsSystem.WebForms.Client.Account
             if (IsValid)
             {
                 // Validate the user's email address
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                ApplicationUser user = manager.FindByName(Email.Text);
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
+                User user = manager.FindByName(Email.Text);
                 if (user == null || !manager.IsEmailConfirmed(user.Id))
                 {
                     FailureText.Text = "The user either does not exist or is not confirmed.";

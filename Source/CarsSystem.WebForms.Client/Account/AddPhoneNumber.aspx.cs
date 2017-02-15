@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
-using CarsSystem.WebForms.Client.Models;
 
 namespace CarsSystem.WebForms.Client.Account
 {
@@ -15,7 +14,7 @@ namespace CarsSystem.WebForms.Client.Account
     {
         protected void PhoneNumber_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), PhoneNumber.Text);
             if (manager.SmsService != null)
             {

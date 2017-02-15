@@ -13,7 +13,7 @@ namespace CarsSystem.WebForms.Client.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var phonenumber = Request.QueryString["PhoneNumber"];
             var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), phonenumber);           
             PhoneNumber.Value = phonenumber;
@@ -27,7 +27,7 @@ namespace CarsSystem.WebForms.Client.Account
                 return;
             }
 
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
 
             var result = manager.ChangePhoneNumber(User.Identity.GetUserId(), PhoneNumber.Value, Code.Text);

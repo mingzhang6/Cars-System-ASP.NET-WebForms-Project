@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using CarsSystem.WebForms.Client.Models;
+using CarsSystem.WebForms.Client.Helpers;
 
 namespace CarsSystem.WebForms.Client.Account
 {
@@ -28,7 +28,7 @@ namespace CarsSystem.WebForms.Client.Account
             if (IsValid)
             {
                 // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
                 // This doen't count login failures towards account lockout

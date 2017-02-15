@@ -5,7 +5,8 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using CarsSystem.WebForms.Client.Models;
+using CarsSystem.Data.Models;
+using CarsSystem.WebForms.Client.Helpers;
 
 namespace CarsSystem.WebForms.Client.Account
 {
@@ -13,9 +14,9 @@ namespace CarsSystem.WebForms.Client.Account
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
+            var user = new User() { UserName = Email.Text, Email = Email.Text };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

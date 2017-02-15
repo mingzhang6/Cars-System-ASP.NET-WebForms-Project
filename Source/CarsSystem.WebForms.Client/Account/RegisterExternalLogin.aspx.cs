@@ -4,7 +4,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using CarsSystem.WebForms.Client.Models;
+using CarsSystem.WebForms.Client.Helpers;
+using CarsSystem.Data.Models;
 
 namespace CarsSystem.WebForms.Client.Account
 {
@@ -38,7 +39,7 @@ namespace CarsSystem.WebForms.Client.Account
             }
             if (!IsPostBack)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
                 var loginInfo = Context.GetOwinContext().Authentication.GetExternalLoginInfo();
                 if (loginInfo == null)
@@ -91,9 +92,9 @@ namespace CarsSystem.WebForms.Client.Account
             {
                 return;
             }
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+            var user = new User() { UserName = email.Text, Email = email.Text };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {

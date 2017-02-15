@@ -22,14 +22,14 @@ namespace CarsSystem.WebForms.Client.Account
             private set;
         }
 
-        private bool HasPassword(ApplicationUserManager manager)
+        private bool HasPassword(UserManager manager)
         {
             return manager.HasPassword(User.Identity.GetUserId());
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             CanRemoveExternalLogins = manager.GetLogins(User.Identity.GetUserId()).Count() > 1;
 
             SuccessMessage = String.Empty;
@@ -38,7 +38,7 @@ namespace CarsSystem.WebForms.Client.Account
 
         public IEnumerable<UserLoginInfo> GetLogins()
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var accounts = manager.GetLogins(User.Identity.GetUserId());
             CanRemoveExternalLogins = accounts.Count() > 1 || HasPassword(manager);
             return accounts;
@@ -46,7 +46,7 @@ namespace CarsSystem.WebForms.Client.Account
 
         public void RemoveLogin(string loginProvider, string providerKey)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var result = manager.RemoveLogin(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
             string msg = String.Empty;

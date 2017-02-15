@@ -53,10 +53,6 @@
                 <asp:Label ID="EmailLabel" runat="server" Text="E-mail: "></asp:Label>
                 <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
             </div>
-            <div>
-                <asp:Label ID="PasswordLabel" runat="server" Text="User password: "></asp:Label>
-                <asp:TextBox ID="PasswordTextBox" runat="server"></asp:TextBox>
-            </div>
         </div>
         <div class="well" style="width: 500px">
             <h3>Fill all text boxes for car information.</h3>

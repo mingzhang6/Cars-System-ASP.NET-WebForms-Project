@@ -17,14 +17,14 @@ namespace CarsSystem.WebForms.Client.Account
             private set;
         }
 
-        private bool HasPassword(ApplicationUserManager manager)
+        private bool HasPassword(UserManager manager)
         {
             return manager.HasPassword(User.Identity.GetUserId());
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
             if (!IsPostBack)
             {
@@ -53,7 +53,7 @@ namespace CarsSystem.WebForms.Client.Account
         {
             if (IsValid)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
                 IdentityResult result = manager.ChangePassword(User.Identity.GetUserId(), CurrentPassword.Text, NewPassword.Text);
                 if (result.Succeeded)
@@ -74,7 +74,7 @@ namespace CarsSystem.WebForms.Client.Account
             if (IsValid)
             {
                 // Create the local login info and link the local account to the user
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 IdentityResult result = manager.AddPassword(User.Identity.GetUserId(), password.Text);
                 if (result.Succeeded)
                 {
