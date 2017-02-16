@@ -101,7 +101,6 @@ namespace CarsSystem.WebForms.Client.Administration
             if (result.Succeeded)
             {
                 manager.AddToRole(userToAdd.Id, ApplicationConstants.UserRole);
-                signInManager.SignIn(userToAdd, isPersistent: false, rememberBrowser: false);
                 service.AddCar(carToAdd);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
