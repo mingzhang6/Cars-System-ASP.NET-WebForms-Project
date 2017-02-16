@@ -66,7 +66,7 @@
                                 <li><a runat="server" href="~/Filters/Filter">Filter taxes</a></li>
                                 <li><a runat="server" href="~/Customers/AllCustomers">All customers</a></li>
                                 <li><a runat="server" href="~/Cars/AllCars">All cars</a></li>
-                                <li><a runat="server" href="~/Administration/AddCustomer">Add customer and car</a></li>
+                                <li><a runat="server" href="~/AddCustomer">Add customer and car</a></li>
                                 <% } %>
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>

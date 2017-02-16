@@ -11,7 +11,10 @@ namespace CarsSystem.WebForms.Client.Filters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!User.IsInRole("Admin"))
+            {
+                Response.Redirect("~/UnauthorizedAccess.aspx");
+            }
         }
     }
 }
