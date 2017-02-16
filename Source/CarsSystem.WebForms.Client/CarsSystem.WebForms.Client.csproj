@@ -178,6 +178,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Customers\AllCustomers.aspx" />
     <Content Include="Customers\CustomerDetails.aspx" />
+    <Content Include="ErrorPages\BadRequest.aspx" />
     <Content Include="ErrorPages\Forbidden.aspx" />
     <Content Include="ErrorPages\InternalServerError.aspx" />
     <Content Include="Filters\Filter.aspx" />
@@ -399,6 +400,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\BadRequest.aspx.cs">
+      <DependentUpon>BadRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\BadRequest.aspx.designer.cs">
+      <DependentUpon>BadRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorPages\Forbidden.aspx.cs">
       <DependentUpon>Forbidden.aspx</DependentUpon>
