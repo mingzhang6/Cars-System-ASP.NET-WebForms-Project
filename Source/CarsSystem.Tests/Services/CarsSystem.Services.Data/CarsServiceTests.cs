@@ -6,6 +6,7 @@ using CarsSystem.Data;
 using CarsSystem.Data.Models;
 using CarsSystem.Services.Data;
 using CarsSystem.Services.Data.Contracts;
+using System.Collections.Generic;
 
 namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
 {
@@ -48,6 +49,48 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
             var service = new CarsService(mockedRepository.Object);
 
             Assert.IsInstanceOf<ICarsService>(service);
+        }
+
+        [Test]
+        public void CarsService_VerifyThehMethodGetAllCars_IsCalled_WhenPassedParametersAreCorrect()
+        {
+            var listOfCars = new List<Car>
+            {
+                new Car() { Id=1, Manufacturer="VW", Model="Golf",  },
+                new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
+                new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
+            };
+
+            var mockedService = new Mock<ICarsService>();
+            mockedService.Setup(c => c.GetAllCars()).Returns(listOfCars);
+
+            var result = mockedService.Object.GetAllCars();
+
+            mockedService.Verify(s => s.GetAllCars(), Times.Exactly(1));
+        }
+
+        [Test]
+        public void CarsService_VerifyThehMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
+        {
+            var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
+            var mockedService = new Mock<ICarsService>();
+            mockedService.Setup(c => c.GetCarById(2)).Returns(car);
+
+            var result = mockedService.Object.GetCarById(2);
+
+            mockedService.Verify(s => s.GetCarById(2), Times.Exactly(1));
+        }
+
+        [Test]
+        public void CarsService_VerifyThehMethodAddCar_IsCalled_WhenPassedParametersAreCorrect()
+        {
+            var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
+            var mockedService = new Mock<ICarsService>();
+            mockedService.Setup(c => c.AddCar(car)).Verifiable();
+
+            mockedService.Object.AddCar(car);
+
+            mockedService.Verify(s => s.AddCar(car), Times.Exactly(1));
         }
     }
 }
