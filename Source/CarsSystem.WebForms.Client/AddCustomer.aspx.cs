@@ -22,7 +22,7 @@ namespace CarsSystem.WebForms.Client.Administration
 
             if (!User.IsInRole("Admin"))
             {
-                Response.Redirect("~/UnauthorizedAccess.aspx");
+                Response.Redirect("~/ErrorPages/UnauthorizedAccess.aspx");
             }
 
             this.TypeOfCarDropDownList.DataSource = Enum.GetNames(typeof(CarType));
