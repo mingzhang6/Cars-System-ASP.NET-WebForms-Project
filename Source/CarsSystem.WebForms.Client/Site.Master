@@ -84,7 +84,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - ASP.NET Web Forms Application made by Todor Enikov</p>
+                <p class="text-center">&copy; <%: DateTime.Now.Year %> - ASP.NET Web Forms Application made by Todor Enikov</p>
             </footer>
         </div>
     </form>
