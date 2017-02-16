@@ -7,6 +7,7 @@ using CarsSystem.Data.Models;
 using CarsSystem.Services.Data;
 using CarsSystem.Services.Data.Contracts;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
 {
@@ -60,7 +61,6 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
             };
-
             var mockedService = new Mock<ICarsService>();
             mockedService.Setup(c => c.GetAllCars()).Returns(listOfCars);
 
@@ -91,6 +91,35 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
             mockedService.Object.AddCar(car);
 
             mockedService.Verify(s => s.AddCar(car), Times.Exactly(1));
+        }
+
+        [Test]
+        public void CarsService_GetAllCarsWorksProperly_WhenPassedParametersAreCorrect()
+        {
+            var listOfCars = new List<Car>
+            {
+                new Car() { Id=1, Manufacturer="VW", Model="Golf",  },
+                new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
+                new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
+            };
+            var mockedService = new Mock<ICarsService>();
+            mockedService.Setup(c => c.GetAllCars()).Returns(listOfCars);
+
+            var result = mockedService.Object.GetAllCars().ToList();
+
+            Assert.AreEqual(listOfCars.Count, result.Count);
+        }
+
+        [Test]
+        public void CarsService_GetCarByIdWorksProperly_WhenPassedParametersAreCorrect()
+        {
+            var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
+            var mockedService = new Mock<ICarsService>();
+            mockedService.Setup(c => c.GetCarById(2)).Returns(car);
+
+            var result = mockedService.Object.GetCarById(2);
+
+            Assert.AreEqual(car.Manufacturer, result.Manufacturer);
         }
     }
 }
