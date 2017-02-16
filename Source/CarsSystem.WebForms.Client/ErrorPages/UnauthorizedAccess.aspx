@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Title="UnAuthorized" MasterPageFile="~/Site.Master" CodeBehind="UnauthorizedAccess.aspx.cs" Inherits="CarsSystem.WebForms.Client.UnauthorizedAccess" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Unauthorized page !" MasterPageFile="~/Site.Master" CodeBehind="UnauthorizedAccess.aspx.cs" Inherits="CarsSystem.WebForms.Client.UnauthorizedAccess" %>
 
-<asp:Content ID="BodyConten" ContentPlaceHolderID="MainContent" runat="Server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
     <br />
     <div class="row">
         <div class="well col-md-8 col-md-offset-2 text-center">
