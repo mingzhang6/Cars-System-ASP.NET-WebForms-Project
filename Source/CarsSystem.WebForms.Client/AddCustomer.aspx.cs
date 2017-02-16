@@ -19,6 +19,12 @@ namespace CarsSystem.WebForms.Client.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!User.IsInRole("Admin"))
+            {
+                Response.Redirect("~/UnauthorizedAccess.aspx");
+            }
+
             this.TypeOfCarDropDownList.DataSource = Enum.GetNames(typeof(CarType));
             this.TypeOfCarDropDownList.DataBind();
             this.TypeOFEngineDropDownList.DataSource = Enum.GetNames(typeof(EngineType));
