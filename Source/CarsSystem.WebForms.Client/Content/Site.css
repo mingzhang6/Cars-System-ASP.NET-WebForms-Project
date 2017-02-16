@@ -32,11 +32,22 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
 }
 
 .my-width {
-    max-width: 400px !important; 
+    max-width: 400px !important;
+}
+
+.filterList {
+    list-style-type: none;
+    float: left;
+}
+
+.listitems {
+    display: inline-block;
+    width:auto
 }
