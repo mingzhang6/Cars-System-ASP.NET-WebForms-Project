@@ -53,7 +53,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void CarsService_VerifyThehMethodGetAllCars_IsCalled_WhenPassedParametersAreCorrect()
+        public void CarsService_VerifyTheMethodGetAllCars_IsCalled_WhenPassedParametersAreCorrect()
         {
             var listOfCars = new List<Car>
             {
@@ -70,7 +70,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void CarsService_VerifyThehMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
+        public void CarsService_VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
             var mockedService = new Mock<ICarsService>();
@@ -82,7 +82,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void CarsService_VerifyThehMethodAddCar_IsCalled_WhenPassedParametersAreCorrect()
+        public void CarsService_VerifyTheMethodAddCar_IsCalled_WhenPassedParametersAreCorrect()
         {
             var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
             var mockedService = new Mock<ICarsService>();
