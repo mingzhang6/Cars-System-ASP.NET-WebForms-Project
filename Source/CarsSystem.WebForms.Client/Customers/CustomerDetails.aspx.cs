@@ -26,7 +26,6 @@ namespace CarsSystem.WebForms.Client.Customers
 
             var id = this.Request.QueryString["id"];
             var user = UsersService.GetUserById(id);
-            var carId = CarsService.GetCarId(user);
 
             this.FirstnameLabel.Text = user.FirstName;
             this.SecondNameLabel.Text = user.SecondName;
@@ -37,7 +36,12 @@ namespace CarsSystem.WebForms.Client.Customers
             this.CityLabel.Text = user.City;
             this.PhoneNumberLabel.Text = user.PhoneNumber;
             this.EmailLabel.Text = user.Email;
-            this.CheckCustomerCarLabel.NavigateUrl = "~/Cars/CarDetails.aspx?id=" + carId;
+
+            if (User.IsInRole("User"))
+            {
+                var carId = CarsService.GetCarId(user); 
+                this.CheckCustomerCarLabel.NavigateUrl = "~/Cars/CarDetails.aspx?id=" + carId;
+            }
         }
     }
 }
