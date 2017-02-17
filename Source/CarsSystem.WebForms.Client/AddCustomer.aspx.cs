@@ -1,7 +1,4 @@
-﻿using CarsSystem.Data;
-using CarsSystem.Data.Models;
-using CarsSystem.Data.Repositories;
-using CarsSystem.Services.Data;
+﻿using CarsSystem.Data.Models;
 using CarsSystem.Services.Data.Contracts;
 using CarsSystem.WebForms.Client.Helpers;
 using Common;
@@ -9,11 +6,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CarsSystem.WebForms.Client.Administration
 {
@@ -38,10 +31,6 @@ namespace CarsSystem.WebForms.Client.Administration
 
         protected void AddInfo_Click(object sender, EventArgs e)
         {
-            //var data = new CarsSystemDbContext();
-            //var carRepo = new EfGenericRepository<Car>(data);
-            //CarsService service = new CarsService(carRepo);
-
             string manufacturer = this.ManufacturerTextBox.Text;
             string model = this.ModelTextBox.Text;
             EngineType typeOfEngine = (EngineType)Enum.Parse(typeof(EngineType), this.TypeOFEngineDropDownList.Text);
