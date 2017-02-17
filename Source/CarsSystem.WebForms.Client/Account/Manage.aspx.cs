@@ -24,26 +24,28 @@ namespace CarsSystem.WebForms.Client.Account
             return manager.HasPassword(User.Identity.GetUserId());
         }
 
-        public bool HasPhoneNumber { get; private set; }
-
-        public bool TwoFactorEnabled { get; private set; }
-
-        public bool TwoFactorBrowserRemembered { get; private set; }
-
-        public int LoginsCount { get; set; }
-
         protected void Page_Load()
         {
             var manager = Context.GetOwinContext().GetUserManager<UserManager>();
+            var user = manager.FindById(User.Identity.GetUserId());
+            this.UsernameLabel.Text = user.UserName;
+            this.FirstNameLabel.Text = user.FirstName;
+            this.SecondNameLabel.Text = user.SecondName;
+            this.LastNameLabel.Text = user.LastName;
+            this.CityLabel.Text = user.City;
 
-            HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
-
-            // Enable this after setting up two-factor authentientication
-            //PhoneNumber.Text = manager.GetPhoneNumber(User.Identity.GetUserId()) ?? String.Empty;
-
-            TwoFactorEnabled = manager.GetTwoFactorEnabled(User.Identity.GetUserId());
-
-            LoginsCount = manager.GetLogins(User.Identity.GetUserId()).Count;
+            if (User.IsInRole("User"))
+            {
+                var car = user.Cars.ToList();
+                this.CarTypeLabel.Text = car[0].TypeOfCar.ToString();
+                this.ManufacturerLabel.Text = car[0].Manufacturer;
+                this.ModelLabel.Text = car[0].Model;
+                this.YearManufactoringLabel.Text = car[0].YearOfManufacturing.ToString("dd/MM/yyyy");
+                this.AnnualCheckUpLabel.Text = car[0].YearOfManufacturing.ToString("dd/MM/yyyy");
+                this.VignetteLabel.Text = car[0].ValidUntilVignette.ToString("dd/MM/yyyy");
+                this.InsuranceLabel.Text = car[0].ValidUntilInsurance.ToString("dd/MM/yyyy");
+                this.EngineTypeLabel.Text = car[0].TypeOfEngine.ToString();
+            }
 
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
 
@@ -79,49 +81,12 @@ namespace CarsSystem.WebForms.Client.Account
             }
         }
 
-
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error);
             }
-        }
-
-        // Remove phonenumber from user
-        protected void RemovePhone_Click(object sender, EventArgs e)
-        {
-            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var result = manager.SetPhoneNumber(User.Identity.GetUserId(), null);
-            if (!result.Succeeded)
-            {
-                return;
-            }
-            var user = manager.FindById(User.Identity.GetUserId());
-            if (user != null)
-            {
-                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                Response.Redirect("/Account/Manage?m=RemovePhoneNumberSuccess");
-            }
-        }
-
-        // DisableTwoFactorAuthentication
-        protected void TwoFactorDisable_Click(object sender, EventArgs e)
-        {
-            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
-            manager.SetTwoFactorEnabled(User.Identity.GetUserId(), false);
-
-            Response.Redirect("/Account/Manage");
-        }
-
-        //EnableTwoFactorAuthentication 
-        protected void TwoFactorEnable_Click(object sender, EventArgs e)
-        {
-            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
-            manager.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
-
-            Response.Redirect("/Account/Manage");
         }
     }
 }
