@@ -38,5 +38,13 @@ namespace CarsSystem.Services.Data
             this.carRepo.Add(carToAdd);
             this.carRepo.SaveChanges();
         }
+
+        public int GetCarId(User user)
+        {
+            var result = this.GetAllCars()
+                             .FirstOrDefault(c => c.UserId == user.Id);
+
+            return result.Id;
+        }
     }
 }
