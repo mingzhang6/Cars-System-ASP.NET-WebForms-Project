@@ -11,5 +11,14 @@ namespace CarsSystem.WebForms.Client.Customers {
     
     
     public partial class AllCustomers {
+        
+        /// <summary>
+        /// AllCustomersGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView AllCustomersGridView;
     }
 }
