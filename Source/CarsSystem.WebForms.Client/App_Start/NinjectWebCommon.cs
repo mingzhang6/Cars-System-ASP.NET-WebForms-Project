@@ -10,6 +10,10 @@ namespace CarsSystem.WebForms.Client.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Data;
+    using Data.Repositories;
+    using Services.Data.Contracts;
+    using Services.Data;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +65,12 @@ namespace CarsSystem.WebForms.Client.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+            kernel.Bind<ICarsSystemDbContext>().To<CarsSystemDbContext>().InRequestScope();
+            kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
+
+            kernel.Bind<IUsersService>().To<UsersService>();
+            kernel.Bind<ICarsService>().To<CarsService>();
+            kernel.Bind<IFilterService>().To<FilterService>();
+        }
     }
 }
