@@ -126,5 +126,25 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
 
             Assert.AreEqual(car.Manufacturer, result.Manufacturer);
         }
+
+        [Test]
+        public void CarsService_MethodGetCarId_ReturnsExpectedCarId()
+        {
+            var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
+            var listOfCars = new List<Car>
+            {
+                new Car() { Id=1, Manufacturer="VW", Model="Golf", UserId="test" },
+                new Car() { Id=2, Manufacturer="BMW", Model="e40", UserId="test1" },
+                new Car() { Id=3, Manufacturer="Lada", Model="2105", UserId="test2" }
+            };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(listOfCars);
+            var service = new CarsService(mockedRepo.Object);
+
+            var actualResult = service.GetCarId(user);
+            var expectedResult = 1;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
