@@ -69,12 +69,13 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 SecondName = "Petrov",
                 LastName = "Ivanov"
             };
-            var mockedRepository = new Mock<IRepository<User>>();
-            mockedRepository.Setup(r => r.GetById("test")).Returns(user);
+            var mockedDb = new Mock<ICarsSystemDbContext>();
+            mockedDb.Setup(m => m.Set<User>().Find("test")).Returns(user);
+            var repository = new EfGenericRepository<User>(mockedDb.Object);
 
-            var result = mockedRepository.Object.GetById("test");
+            repository.GetById("test");
 
-            mockedRepository.Verify(r => r.GetById("test"), Times.Exactly(1));
+            mockedDb.Verify(m => m.Set<User>().Find("test"), Times.Exactly(1));
         }
 
         [Test]
@@ -115,6 +116,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data
                 SecondName = "Petrov",
                 LastName = "Ivanov"
             };
+
             var mockedRepository = new Mock<IRepository<User>>();
             mockedRepository.Setup(r => r.Add(user)).Verifiable();
 

@@ -61,36 +61,39 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
             };
-            var mockedService = new Mock<ICarsService>();
-            mockedService.Setup(c => c.GetAllCars()).Returns(listOfCars);
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(listOfCars);
+            var service = new CarsService(mockedRepo.Object);
 
-            var result = mockedService.Object.GetAllCars();
+            service.GetAllCars();
 
-            mockedService.Verify(s => s.GetAllCars(), Times.Exactly(1));
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
         }
 
         [Test]
         public void CarsService_VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
-            var mockedService = new Mock<ICarsService>();
-            mockedService.Setup(c => c.GetCarById(2)).Returns(car);
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.GetById(2)).Returns(car);
+            var service = new CarsService(mockedRepo.Object);
 
-            var result = mockedService.Object.GetCarById(2);
+            service.GetCarById(1);
 
-            mockedService.Verify(s => s.GetCarById(2), Times.Exactly(1));
+            mockedRepo.Verify(m => m.GetById(1), Times.Exactly(1));
         }
 
         [Test]
         public void CarsService_VerifyTheMethodAddCar_IsCalled_WhenPassedParametersAreCorrect()
         {
             var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
-            var mockedService = new Mock<ICarsService>();
-            mockedService.Setup(c => c.AddCar(car)).Verifiable();
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.Add(car)).Verifiable();
+            var service = new CarsService(mockedRepo.Object);
 
-            mockedService.Object.AddCar(car);
+            service.AddCar(car);
 
-            mockedService.Verify(s => s.AddCar(car), Times.Exactly(1));
+            mockedRepo.Verify(m => m.Add(car), Times.Exactly(1));
         }
 
         [Test]
@@ -102,10 +105,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40",  },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105",  }
             };
-            var mockedService = new Mock<ICarsService>();
-            mockedService.Setup(c => c.GetAllCars()).Returns(listOfCars);
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(listOfCars);
+            var service = new CarsService(mockedRepo.Object);
 
-            var result = mockedService.Object.GetAllCars().ToList();
+            var result = service.GetAllCars().ToList();
 
             Assert.AreEqual(listOfCars.Count, result.Count);
         }
@@ -114,10 +118,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         public void CarsService_GetCarByIdWorksProperly_WhenPassedParametersAreCorrect()
         {
             var car = new Car() { Id = 1, Manufacturer = "VW", Model = "Golf", };
-            var mockedService = new Mock<ICarsService>();
-            mockedService.Setup(c => c.GetCarById(2)).Returns(car);
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.GetById(1)).Returns(car);
+            var service = new CarsService(mockedRepo.Object);
 
-            var result = mockedService.Object.GetCarById(2);
+            var result = service.GetCarById(1);
 
             Assert.AreEqual(car.Manufacturer, result.Manufacturer);
         }

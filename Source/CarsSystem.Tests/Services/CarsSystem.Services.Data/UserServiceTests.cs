@@ -61,36 +61,37 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
 
             };
-            var mockedService = new Mock<IUsersService>();
-            mockedService.Setup(c => c.GetAllUsers()).Returns(listOfUser);
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(m => m.All()).Returns(listOfUser);
+            var service = new UsersService(mockedRepo.Object);
 
-            var result = mockedService.Object.GetAllUsers();
+            service.GetAllUsers();
 
-            mockedService.Verify(s => s.GetAllUsers(), Times.Exactly(1));
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
         }
 
         [Test]
         public void UserService_VerifyThehMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(c => c.GetById("test")).Returns(user);
+            var service = new UsersService(mockedRepo.Object);
 
-            var mockedService = new Mock<IUsersService>();
-            mockedService.Setup(c => c.GetUserById("test")).Returns(user);
+            service.GetUserById("test");
 
-            var result = mockedService.Object.GetUserById("test");
-
-            mockedService.Verify(s => s.GetUserById("test"), Times.Exactly(1));
+            mockedRepo.Verify(m => m.GetById("test"), Times.Exactly(1));
         }
 
         [Test]
         public void UserService_GetUserByIdWorksProperly_WhenPassedParametersAreCorrect()
         {
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(c => c.GetById("test")).Returns(user);
+            var service = new UsersService(mockedRepo.Object);
 
-            var mockedService = new Mock<IUsersService>();
-            mockedService.Setup(c => c.GetUserById("test")).Returns(user);
-
-            var result = mockedService.Object.GetUserById("test");
+            var result = service.GetUserById("test");
 
             Assert.AreEqual(user.FirstName, result.FirstName);
         }
@@ -105,10 +106,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
 
             };
-            var mockedService = new Mock<IUsersService>();
-            mockedService.Setup(c => c.GetAllUsers()).Returns(listOfUser);
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(m => m.All()).Returns(listOfUser);
+            var service = new UsersService(mockedRepo.Object);
 
-            var result = mockedService.Object.GetAllUsers().ToList();
+            var result = service.GetAllUsers().ToList();
 
             Assert.AreEqual(listOfUser.Count, result.Count);
         }

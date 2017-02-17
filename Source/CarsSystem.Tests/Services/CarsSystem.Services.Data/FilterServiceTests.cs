@@ -60,11 +60,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now }
             };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
 
-            var mockedService = new Mock<IFilterService>();
-            mockedService.Setup(s => s.FilterExpiringVignetteCars()).Returns(collectionOfCars);
-
-            var result = mockedService.Object.FilterExpiringVignetteCars().ToList();
+            var result = service.FilterExpiringVignetteCars().ToList();
 
             Assert.AreEqual(collectionOfCars.Count, result.Count);
         }
@@ -78,13 +78,13 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now }
             };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
 
-            var mockedService = new Mock<IFilterService>();
-            mockedService.Setup(s => s.FilterExpiringVignetteCars()).Returns(collectionOfCars);
+            service.FilterExpiringVignetteCars();
 
-            var result = mockedService.Object.FilterExpiringVignetteCars();
-
-            mockedService.Verify(s => s.FilterExpiringVignetteCars(), Times.Exactly(1));
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
         }
 
         [Test]
@@ -96,11 +96,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilInsurance=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilInsurance=DateTime.Now }
             };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
 
-            var mockedService = new Mock<IFilterService>();
-            mockedService.Setup(s => s.FilterExpiringInsurance()).Returns(collectionOfCars);
-
-            var result = mockedService.Object.FilterExpiringInsurance().ToList();
+            var result = service.FilterExpiringInsurance().ToList();
 
             Assert.AreEqual(collectionOfCars.Count, result.Count);
         }
@@ -114,13 +114,13 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilInsurance=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilInsurance=DateTime.Now }
             };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
 
-            var mockedService = new Mock<IFilterService>();
-            mockedService.Setup(s => s.FilterExpiringInsurance()).Returns(collectionOfCars);
+            service.FilterExpiringInsurance();
 
-            var result = mockedService.Object.FilterExpiringInsurance();
-
-            mockedService.Verify(s => s.FilterExpiringInsurance(), Times.Exactly(1));
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
         }
 
         [Test]
@@ -132,11 +132,11 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilAnnualCheckUp=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilAnnualCheckUp=DateTime.Now }
             };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(s => s.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
 
-            var mockedService = new Mock<IFilterService>();
-            mockedService.Setup(s => s.FilterExpiringAnnualCheckUp()).Returns(collectionOfCars);
-
-            var result = mockedService.Object.FilterExpiringAnnualCheckUp().ToList();
+            var result = service.FilterExpiringAnnualCheckUp().ToList();
 
             Assert.AreEqual(collectionOfCars.Count, result.Count);
         }
@@ -150,13 +150,13 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
                 new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilAnnualCheckUp=DateTime.Now },
                 new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilAnnualCheckUp=DateTime.Now }
             };
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
 
-            var mockedService = new Mock<IFilterService>();
-            mockedService.Setup(s => s.FilterExpiringAnnualCheckUp()).Returns(collectionOfCars);
+            service.FilterExpiringAnnualCheckUp();
 
-            var result = mockedService.Object.FilterExpiringAnnualCheckUp();
-
-            mockedService.Verify(s => s.FilterExpiringAnnualCheckUp(), Times.Exactly(1));
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
         }
     }
 }
