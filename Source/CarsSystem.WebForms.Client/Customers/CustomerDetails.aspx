@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Customer details page" MasterPageFile="~/Site.Master" CodeBehind="CustomerDetails.aspx.cs" Inherits="CarsSystem.WebForms.Client.Customers.CustomerDetails" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="row">
         <h1 class="text-center">Customer details page!</h1>
         <div class="well col-md-6 col-md-offset-3">

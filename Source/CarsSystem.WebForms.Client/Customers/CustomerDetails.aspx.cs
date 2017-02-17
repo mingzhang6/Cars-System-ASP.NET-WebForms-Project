@@ -33,7 +33,7 @@ namespace CarsSystem.WebForms.Client.Customers
             this.LastNameLabel.Text = user.LastName;
             this.EGNLabel.Text = user.EGN.ToString();
             this.NumberOfIdCardLabel.Text = user.NumberOfIdCard.ToString();
-            this.DateOfIssueLabel.Text = user.DateOfIssue.ToString();
+            this.DateOfIssueLabel.Text = user.DateOfIssue.ToString("dd.MM.yyyy");
             this.CityLabel.Text = user.City;
             this.PhoneNumberLabel.Text = user.PhoneNumber;
             this.EmailLabel.Text = user.Email;
