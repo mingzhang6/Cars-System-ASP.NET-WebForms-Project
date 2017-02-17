@@ -79,6 +79,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Data\CarsSystem.Data.Models\CarTests.cs" />
+    <Compile Include="Data\CarsSystem.Data.Models\CarAttributesTests.cs" />
+    <Compile Include="Data\CarsSystem.Data.Models\UserAttributesTests.cs" />
     <Compile Include="Data\CarsSystem.Data.Models\UserTests.cs" />
     <Compile Include="Data\CarsSystem.Data\CarsSystemDbContextTests.cs" />
     <Compile Include="Data\CarsSystem.Data\EfGenericRepositoryTests.cs" />
