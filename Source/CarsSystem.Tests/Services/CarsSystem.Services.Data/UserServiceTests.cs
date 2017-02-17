@@ -52,7 +52,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void UserService_VerifyThehMethodGetAllCars_IsCalled_WhenPassedParametersAreCorrect()
+        public void UsersService_VerifyTheMethodGetAllCars_IsCalled_WhenPassedParametersAreCorrect()
         {
             var listOfUser = new List<User>
             {
@@ -71,7 +71,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void UserService_VerifyThehMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
+        public void UsersService_VerifyTheMethodGetCarById_IsCalled_WhenPassedParametersAreCorrect()
         {
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
             var mockedRepo = new Mock<IRepository<User>>();
@@ -84,7 +84,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void UserService_GetUserByIdWorksProperly_WhenPassedParametersAreCorrect()
+        public void UsersService_GetUserByIdWorksProperly_WhenPassedParametersAreCorrect()
         {
             var user = new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata" };
             var mockedRepo = new Mock<IRepository<User>>();
@@ -97,7 +97,7 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
         }
 
         [Test]
-        public void UserService_GetAllUsersMethodWorksProperly_WhenPassedParametersAreCorrect()
+        public void UsersService_GetAllUsersMethodWorksProperly_WhenPassedParametersAreCorrect()
         {
             var listOfUser = new List<User>
             {
@@ -113,6 +113,27 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
             var result = service.GetAllUsers().ToList();
 
             Assert.AreEqual(listOfUser.Count, result.Count);
+        }
+
+        [Test]
+        public void UsersService_MethodGetUserId_ReturnsExpectedUserId()
+        {
+            var car = new Car() { UserId = "test", Manufacturer = "Trabant", Model = "Iztrebitel" };
+            var listOfUser = new List<User>
+            {
+                new User() { Id="test", FirstName="Gosho", LastName="Pochivkata" },
+                new User() { Id="test1", FirstName="Monti", LastName="Picha" },
+                new User() { Id="test2", FirstName="Marin", LastName="The hunter" },
+
+            };
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(m => m.All()).Returns(listOfUser);
+            var service = new UsersService(mockedRepo.Object);
+
+            var actualResult = service.GetUserId(car);
+            var expectedResult = "test";
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
