@@ -187,6 +187,7 @@
     <Content Include="ErrorPages\BadRequest.aspx" />
     <Content Include="ErrorPages\Forbidden.aspx" />
     <Content Include="ErrorPages\InternalServerError.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Filters\Filter.aspx" />
     <Content Include="Filters\FilterByAnnualCheckUp.aspx" />
     <Content Include="Filters\FilterByInsurance.aspx" />
@@ -228,7 +229,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Default.aspx" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ErrorPages\UnauthorizedAccess.aspx" />
