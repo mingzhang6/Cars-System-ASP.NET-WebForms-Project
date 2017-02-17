@@ -79,7 +79,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-md-6 text-right">
-                    <asp:Label runat="server" Text="Valid until annual check up: "></asp:Label>
+                    <asp:Label runat="server" Text="Annual check up valid until: "></asp:Label>
                 </div>
                 <div class="col-md-6">
                     <asp:Label ID="AnnualCkeckLabel" runat="server"></asp:Label>
@@ -87,7 +87,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-md-6 text-right">
-                    <asp:Label runat="server" Text="Valid until vignette: "></asp:Label>
+                    <asp:Label runat="server" Text="Vignette valid until: "></asp:Label>
                 </div>
                 <div class="col-md-6">
                     <asp:Label ID="VignetteLabel" runat="server"></asp:Label>
@@ -95,7 +95,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-md-6 text-right">
-                    <asp:Label runat="server" Text="Valid until insurance: "></asp:Label>
+                    <asp:Label runat="server" Text="Insurance valid until: "></asp:Label>
                 </div>
                 <div class="col-md-6">
                     <asp:Label ID="InsuranceLabel" runat="server"></asp:Label>
