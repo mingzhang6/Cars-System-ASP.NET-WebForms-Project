@@ -32,5 +32,13 @@ namespace CarsSystem.Services.Data
         {
             return this.userRepo.GetById(id);
         }
+
+        public string GetUserId(Car car)
+        {
+            var result = this.GetAllUsers()
+                             .FirstOrDefault(u => u.Id == car.UserId);
+
+            return result.Id;
+        }
     }
 }
