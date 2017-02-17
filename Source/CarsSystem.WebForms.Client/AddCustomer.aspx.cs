@@ -2,10 +2,12 @@
 using CarsSystem.Data.Models;
 using CarsSystem.Data.Repositories;
 using CarsSystem.Services.Data;
+using CarsSystem.Services.Data.Contracts;
 using CarsSystem.WebForms.Client.Helpers;
 using Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,9 @@ namespace CarsSystem.WebForms.Client.Administration
 {
     public partial class AddCustomer : System.Web.UI.Page
     {
+        [Inject]
+        public ICarsService Service { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,9 +38,9 @@ namespace CarsSystem.WebForms.Client.Administration
 
         protected void AddInfo_Click(object sender, EventArgs e)
         {
-            var data = new CarsSystemDbContext();
-            var carRepo = new EfGenericRepository<Car>(data);
-            CarsService service = new CarsService(carRepo);
+            //var data = new CarsSystemDbContext();
+            //var carRepo = new EfGenericRepository<Car>(data);
+            //CarsService service = new CarsService(carRepo);
 
             string manufacturer = this.ManufacturerTextBox.Text;
             string model = this.ModelTextBox.Text;
@@ -101,7 +106,7 @@ namespace CarsSystem.WebForms.Client.Administration
             if (result.Succeeded)
             {
                 manager.AddToRole(userToAdd.Id, ApplicationConstants.UserRole);
-                service.AddCar(carToAdd);
+                Service.AddCar(carToAdd);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else
