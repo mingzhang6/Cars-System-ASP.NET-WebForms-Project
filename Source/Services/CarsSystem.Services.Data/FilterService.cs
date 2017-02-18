@@ -43,5 +43,23 @@ namespace CarsSystem.Services.Data
             return this.carRepo.All()
                        .Where(c => (c.ValidUntilAnnualCheckUp - dateTimeNow).TotalDays <= 7);
         }
+
+        public IEnumerable<string> GetMailsForCarsVignetteExpiration()
+        {
+            return this.FilterExpiringVignetteCars()
+                       .Select(c => c.User.Email);
+        }
+
+        public IEnumerable<string> GetMailsForCarsInsuranceExpiration()
+        {
+            return this.FilterExpiringInsurance()
+                       .Select(c => c.User.Email);
+        }
+
+        public IEnumerable<string> GetMailsForCarsAnnualCheckUpExpiration()
+        {
+            return this.FilterExpiringAnnualCheckUp()
+                       .Select(c => c.User.Email);
+        }
     }
 }
