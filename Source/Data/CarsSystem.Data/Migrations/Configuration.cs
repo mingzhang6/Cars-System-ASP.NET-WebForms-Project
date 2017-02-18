@@ -57,6 +57,7 @@ namespace CarsSystem.Data.Migrations
                     DateOfIssue = DateTime.Now,
                     City = "No where",
                     PhoneNumber = "1111111",
+                    Email="Admin@abv.bg"
                 };
 
                 userManager.Create(defaultAdmin, "123456");
