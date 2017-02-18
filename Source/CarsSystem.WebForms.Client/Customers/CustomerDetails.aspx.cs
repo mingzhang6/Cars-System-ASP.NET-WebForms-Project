@@ -37,11 +37,9 @@ namespace CarsSystem.WebForms.Client.Customers
             this.PhoneNumberLabel.Text = user.PhoneNumber;
             this.EmailLabel.Text = user.Email;
 
-            if (User.IsInRole("User"))
-            {
-                var carId = CarsService.GetCarId(user); 
-                this.CheckCustomerCarLabel.NavigateUrl = "~/Cars/CarDetails.aspx?id=" + carId;
-            }
+
+            var carId = CarsService.GetCarId(user);
+            this.CheckCustomerCarLabel.NavigateUrl = "~/Cars/CarDetails.aspx?id=" + carId;
         }
     }
 }

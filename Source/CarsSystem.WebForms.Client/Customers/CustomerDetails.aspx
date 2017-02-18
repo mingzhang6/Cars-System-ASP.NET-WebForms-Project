@@ -77,8 +77,6 @@
                     <asp:Label ID="EmailLabel" runat="server"></asp:Label>
                 </div>
             </div>
-            <% if (System.Web.HttpContext.Current.User.IsInRole("User"))
-                                    {%>
             <div class="row form-group">
                 <div class="col-md-6 text-right">
                     <asp:Label runat="server" Text="Check customer's car: "></asp:Label>
@@ -87,7 +85,6 @@
                     <asp:HyperLink  ID="CheckCustomerCarLabel" runat="server" Text="CarInfoLink"></asp:HyperLink>
                 </div>
             </div>
-            <% } %>
         </div>
     </div>
 </asp:Content>
