@@ -71,6 +71,7 @@ namespace CarsSystem.WebForms.Client.App_Start
             kernel.Bind<IUsersService>().To<UsersService>();
             kernel.Bind<ICarsService>().To<CarsService>();
             kernel.Bind<IFilterService>().To<FilterService>();
+            kernel.Bind<IMailService>().To<MailService>();
         }
     }
 }
