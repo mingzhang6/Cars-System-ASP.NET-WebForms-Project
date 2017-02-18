@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-2">
             <h1 class="text-left">All cars which annual check up expires soon!</h1>
-            <asp:GridView ID="FilterGridView" runat="server" AutoGenerateColumns="false" CssClass="col-md-offset-1">
+            <asp:GridView ID="FilterGridView" runat="server" AutoGenerateColumns="false" CssClass="col-md-offset-1 text-center">
                 <Columns>
                     <asp:BoundField DataField="Manufacturer" HeaderText="Manufacturer" />
                     <asp:BoundField DataField="Model" HeaderText="Model" />
