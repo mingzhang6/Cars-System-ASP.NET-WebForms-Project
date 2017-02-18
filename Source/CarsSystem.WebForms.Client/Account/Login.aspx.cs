@@ -1,10 +1,8 @@
-﻿using System;
+﻿using CarsSystem.WebForms.Client.Helpers;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using CarsSystem.WebForms.Client.Helpers;
 
 namespace CarsSystem.WebForms.Client.Account
 {
