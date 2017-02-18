@@ -53,6 +53,9 @@ namespace CarsSystem.Data.Models
         [Required]
         public override string PhoneNumber { get; set; }
 
+        [Required]
+        public override string Email { get; set; }
+
         public virtual ICollection<Car> Cars
         {
             get { return this.cars; }
