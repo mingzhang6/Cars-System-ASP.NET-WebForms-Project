@@ -79,7 +79,7 @@
                     <asp:Label ID="IssueLabel" runat="server" Text="Date of issue: "></asp:Label>
                 </div>
                 <div class="col-md-5">
-                    <asp:TextBox ID="IssueTextBox" runat="server" CssClass="datepicker form-control my-width"></asp:TextBox>
+                    <asp:TextBox ID="IssueTextBox" runat="server" CssClass="firstDatepicker form-control my-width"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="IssueTextBox" Text="The field is required!" runat="server"></asp:RequiredFieldValidator>
@@ -217,7 +217,7 @@
                     <asp:Label ID="ManufactoringYearLabel" runat="server" Text="Year of manufactoring: "></asp:Label>
                 </div>
                 <div class="col-md-5">
-                    <asp:TextBox ID="ManufactoringYearTextBox" runat="server" CssClass="datepicker form-control my-width"></asp:TextBox>
+                    <asp:TextBox ID="ManufactoringYearTextBox" runat="server" CssClass="secondDatepicker form-control my-width"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator19" ControlToValidate="ManufactoringYearTextBox" Text="The field is required!" runat="server"></asp:RequiredFieldValidator>
@@ -228,7 +228,7 @@
                     <asp:Label ID="CheckUpLabel" runat="server" Text="Valid until annual check up: "></asp:Label>
                 </div>
                 <div class="col-md-5">
-                    <asp:TextBox ID="CheckUpTextBox" runat="server" CssClass="datepicker form-control my-width"></asp:TextBox>
+                    <asp:TextBox ID="CheckUpTextBox" runat="server" CssClass="thirdDatepicker form-control my-width"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator20" ControlToValidate="CheckUpTextBox" Text="The field is required!" runat="server"></asp:RequiredFieldValidator>
@@ -239,7 +239,7 @@
                     <asp:Label ID="VignetteLabel" runat="server" Text="Valid until vignette: "></asp:Label>
                 </div>
                 <div class="col-md-5">
-                    <asp:TextBox ID="VignetteTextBox" runat="server" CssClass="datepicker form-control my-width"></asp:TextBox>
+                    <asp:TextBox ID="VignetteTextBox" runat="server" CssClass="fourthDatepicker form-control my-width"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator21" ControlToValidate="VignetteTextBox" Text="The field is required!" runat="server"></asp:RequiredFieldValidator>
@@ -250,7 +250,7 @@
                     <asp:Label ID="InsuranceLabel" runat="server" Text="Valid until insurance: "></asp:Label>
                 </div>
                 <div class="col-md-5">
-                    <asp:TextBox ID="InsuranceTextBox" runat="server" CssClass="datepicker form-control my-width"></asp:TextBox>
+                    <asp:TextBox ID="InsuranceTextBox" runat="server" CssClass="fifthDatepicker form-control my-width"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator22" ControlToValidate="InsuranceTextBox" Text="The field is required!" runat="server"></asp:RequiredFieldValidator>
@@ -266,12 +266,5 @@
     </div>
     <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            $(".datepicker").datepicker({
-                changeMonth: true,
-                changeYear: true
-            });
-        });
-    </script>
+    <script type="text/javascript" src="Scripts/datepicker.js"></script>
 </asp:Content>
