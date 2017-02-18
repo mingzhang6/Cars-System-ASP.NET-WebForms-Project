@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
-        <h3>Hello this page is about contributors to this project!</h3>
+        <h3 class="text-center">Hello this page is about contributors to this project!</h3>
     </div>
     <div class="panel panel-info">
         <div class="panel-heading">
