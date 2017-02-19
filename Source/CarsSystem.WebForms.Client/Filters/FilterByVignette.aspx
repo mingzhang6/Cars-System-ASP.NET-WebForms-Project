@@ -2,9 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
-        <div class="col-md-8 col-md-offset-1">
-            <h1 class="text-right">All cars which vignette expires soon!</h1>
-            <asp:GridView ID="FilterGridView" runat="server" AutoGenerateColumns="false" CssClass="col-md-offset-3 text-center">
+        <div class="col-md-12">
+            <h1 class="text-center">All cars which vignette expires soon!</h1>
+            <asp:GridView ID="FilterGridView" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover text-center">
                 <Columns>
                     <asp:BoundField DataField="Manufacturer" HeaderText="Manufacturer" />
                     <asp:BoundField DataField="Model" HeaderText="Model" />

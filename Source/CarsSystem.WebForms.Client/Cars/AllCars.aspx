@@ -6,7 +6,7 @@
         <div class="well col-md-4 col-md-offset-4">
             <h1 class="text-center">All cars page!</h1>
             <br />
-            <asp:GridView ID="AllCarsGridView" runat="server" AutoGenerateColumns="false" CssClass="text-center col-md-offset-1 form-group">
+            <asp:GridView ID="AllCarsGridView" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover text-center form-group">
                 <Columns>
                     <asp:BoundField DataField="Manufacturer" HeaderText="Manufacturer" />
                     <asp:BoundField DataField="Model" HeaderText="Model" />
