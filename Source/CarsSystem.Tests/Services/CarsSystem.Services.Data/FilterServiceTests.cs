@@ -158,5 +158,62 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
 
             mockedRepo.Verify(m => m.All(), Times.Exactly(1));
         }
+
+        [Test]
+        public void FilterService_GetMailsForCarsVignetteExpiration_VerifysThatMethodAllIsCalledExactlyOneTime()
+        {
+            var collectionOfCars = new List<Car>
+            {
+                new Car() { Id=1, Manufacturer="VW", Model="Golf", ValidUntilVignette=DateTime.Now,  },
+                new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now,  },
+                new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
+            };
+
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
+
+            service.GetMailsForCarsVignetteExpiration();
+
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
+        }
+
+        [Test]
+        public void FilterService_GetMailsForCarsInsuranceExpiration_VerifysThatMethodAllIsCalledExactlyOneTime()
+        {
+            var collectionOfCars = new List<Car>
+            {
+                new Car() { Id=1, Manufacturer="VW", Model="Golf", ValidUntilVignette=DateTime.Now,  },
+                new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now,  },
+                new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
+            };
+
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
+
+            service.GetMailsForCarsInsuranceExpiration();
+
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
+        }
+
+        [Test]
+        public void FilterService_GetMailsForCarsAnnualCheckUpExpiration_VerifysThatMethodAllIsCalledExactlyOneTime()
+        {
+            var collectionOfCars = new List<Car>
+            {
+                new Car() { Id=1, Manufacturer="VW", Model="Golf", ValidUntilVignette=DateTime.Now,  },
+                new Car() { Id=2, Manufacturer="BMW", Model="e40", ValidUntilVignette=DateTime.Now,  },
+                new Car() { Id=3, Manufacturer="Lada", Model="2105", ValidUntilVignette=DateTime.Now, }
+            };
+
+            var mockedRepo = new Mock<IRepository<Car>>();
+            mockedRepo.Setup(m => m.All()).Returns(collectionOfCars);
+            var service = new FilterService(mockedRepo.Object);
+
+            service.GetMailsForCarsAnnualCheckUpExpiration();
+
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
+        }
     }
 }
