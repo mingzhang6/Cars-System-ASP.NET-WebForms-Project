@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-4">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="FirstNameTextBox"
-                        Text="The field is required and lenght between 5 and 20 symbols!" runat="server"></asp:RequiredFieldValidator>
+                        Text="The field is required and lenght between 2 and 20 symbols!" runat="server"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="row form-group">
@@ -38,7 +38,7 @@
                     <asp:TextBox CssClass="form-control my-width" ID="SecondNameTextBox" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="SecondNameTextBox" Text="The field is required and lenght between 5 and 20 symbols!" runat="server"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="SecondNameTextBox" Text="The field is required and lenght between 2 and 20 symbols!" runat="server"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="row form-group">
@@ -49,7 +49,7 @@
                     <asp:TextBox CssClass="form-control my-width" ID="LastNameTextBox" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="LastNameTextBox" Text="The field is required and lenght between 5 and 20 symbols!" runat="server"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="LastNameTextBox" Text="The field is required and lenght between 2 and 20 symbols!" runat="server"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="row form-group">
