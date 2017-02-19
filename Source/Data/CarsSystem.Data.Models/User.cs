@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -22,24 +23,26 @@ namespace CarsSystem.Data.Models
         public override string Id { get; set; }
 
         [Required]
-        [MinLength(5)]
+        [MinLength(2)]
         [MaxLength(20)]
         public string FirstName { get; set; }
 
         [Required]
-        [MinLength(5)]
+        [MinLength(2)]
         [MaxLength(20)]
         public string SecondName { get; set; }
 
         [Required]
-        [MinLength(5)]
+        [MinLength(2)]
         [MaxLength(20)]
         public string LastName { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
         public long EGN { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
         public int NumberOfIdCard { get; set; }
 
         [Required]
