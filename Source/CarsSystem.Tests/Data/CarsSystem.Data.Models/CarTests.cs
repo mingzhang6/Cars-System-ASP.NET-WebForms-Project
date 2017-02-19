@@ -96,7 +96,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
             var car = new Car();
 
             var actualValidUntilAnnualCheckUp = car.ValidUntilAnnualCheckUp.ToString();
-            var expectedValidUntilAnnualCheckUp = "1.1.0001 г. 0:00:00";
+            var expectedValidUntilAnnualCheckUp = "1/1/0001 12:00:00 AM";
 
             Assert.AreEqual(expectedValidUntilAnnualCheckUp, actualValidUntilAnnualCheckUp);
         }
@@ -107,7 +107,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
             var car = new Car();
 
             var actualValidUntilVignette = car.ValidUntilVignette.ToString();
-            var expectedValidUntilVignette = "1.1.0001 г. 0:00:00";
+            var expectedValidUntilVignette = "1/1/0001 12:00:00 AM";
 
             Assert.AreEqual(expectedValidUntilVignette, actualValidUntilVignette);
         }
@@ -118,7 +118,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
             var car = new Car();
 
             var actualValidUntilInsurance = car.ValidUntilInsurance.ToString();
-            var expectedValidUntilInsurance = "1.1.0001 г. 0:00:00";
+            var expectedValidUntilInsurance = "1/1/0001 12:00:00 AM";
 
             Assert.AreEqual(expectedValidUntilInsurance, actualValidUntilInsurance);
         }

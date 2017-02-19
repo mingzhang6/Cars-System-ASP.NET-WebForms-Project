@@ -61,7 +61,7 @@ namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
             var user = new User();
 
             var actualDateOfIssue = user.DateOfIssue.ToString();
-            var expectedDateOfIssue = "1.1.0001 г. 0:00:00";
+            var expectedDateOfIssue = "1/1/0001 12:00:00 AM";
 
             Assert.AreEqual(expectedDateOfIssue, actualDateOfIssue);
         }
