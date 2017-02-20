@@ -21,5 +21,12 @@ namespace CarsSystem.WebForms.Client.Customers
             this.AllCustomersGridView.DataSource = Service.GetAllUsers().ToList();
             this.AllCustomersGridView.DataBind();
         }
+
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            var egn = long.Parse(this.SearchTextBox.Text);
+            this.AllCustomersGridView.DataSource = Service.GetUserByEGN(egn).ToList();
+            this.AllCustomersGridView.DataBind();
+        }
     }
 }
