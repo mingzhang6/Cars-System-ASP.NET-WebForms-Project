@@ -7,6 +7,7 @@ namespace CarsSystem.Services.Data.Contracts
     {
         IEnumerable<User> GetAllUsers();
         User GetUserById(string id);
+        IEnumerable<User> GetUserByEGN(long egn);
         string GetUserId(Car car);
     }
 }
