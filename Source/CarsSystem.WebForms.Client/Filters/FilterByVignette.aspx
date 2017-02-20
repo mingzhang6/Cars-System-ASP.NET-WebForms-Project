@@ -19,11 +19,21 @@
     <br />
     <div class="row">
         <div class="col-md-12 col-md-offset-2">
-            <asp:Label ID="EmailSubjectLabel" runat="server" Text="Subject: "></asp:Label>
-            <asp:TextBox ID="EmailSubjectTextBox" runat="server"></asp:TextBox>
-            <asp:Label ID="EmailContentLabel" runat="server" Text="Content:"></asp:Label>
-            <asp:TextBox ID="EmailContentBox" runat="server"></asp:TextBox>
-            <asp:Button ID="SendMailButton" runat="server" Text="Send e-mails to the filtered cars!" OnClick="SendMailButton_Click" />
+            <div class="col-md-1 text-right">
+                <asp:Label ID="EmailSubjectLabel" runat="server" Text="Subject: " CssClass="control-label"></asp:Label>
+            </div>
+            <div class="col-md-2">
+                <asp:TextBox ID="EmailSubjectTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="col-md-1 text-right">
+                <asp:Label ID="EmailContentLabel" runat="server" Text="Content:" CssClass="control-label"></asp:Label>
+            </div>
+            <div class="col-md-2">
+                <asp:TextBox ID="EmailContentBox" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="col-md-3">
+                <asp:Button ID="SendMailButton" runat="server" Text="Send e-mails to the filtered cars!" OnClick="SendMailButton_Click" CssClass="btn btn-default" />
+            </div>
         </div>
     </div>
 </asp:Content>
