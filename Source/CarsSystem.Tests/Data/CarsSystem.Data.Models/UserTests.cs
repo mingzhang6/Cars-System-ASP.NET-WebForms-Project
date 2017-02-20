@@ -1,6 +1,5 @@
-﻿using System;
+﻿using CarsSystem.Data.Models;
 using NUnit.Framework;
-using CarsSystem.Data.Models;
 
 namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
 {

@@ -6,10 +6,6 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 [assembly: OwinStartupAttribute(typeof(CarsSystem.Auth.Startup))]
 namespace CarsSystem.Auth

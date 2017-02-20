@@ -1,7 +1,5 @@
-﻿using System;
+﻿using CarsSystem.Data;
 using NUnit.Framework;
-using CarsSystem.Data;
-using Microsoft.AspNet.Identity;
 
 namespace CarsSystem.Tests.Data.CarsSystem.Data
 {

@@ -1,9 +1,8 @@
-﻿using System;
+﻿using CarsSystem.Data.Models;
 using NUnit.Framework;
-using CarsSystem.Data.Models;
-using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace CarsSystem.Tests.Data.CarsSystem.Data.Models
 {
