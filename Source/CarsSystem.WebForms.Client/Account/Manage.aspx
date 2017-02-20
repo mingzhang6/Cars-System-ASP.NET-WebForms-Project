@@ -38,6 +38,10 @@
                             <dd>
                                 <asp:Label ID="CityLabel" runat="server"></asp:Label>
                             </dd>
+                            <dt>Email:</dt>
+                            <dd>
+                                <asp:Label ID="EmailLabel" runat="server"></asp:Label>
+                            </dd>
                             <% if (System.Web.HttpContext.Current.User.IsInRole("User"))
                                 {%>
                             <dt>Car's type:</dt>

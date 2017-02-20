@@ -28,6 +28,7 @@ namespace CarsSystem.WebForms.Client.Account
             this.SecondNameLabel.Text = user.SecondName;
             this.LastNameLabel.Text = user.LastName;
             this.CityLabel.Text = user.City;
+            this.EmailLabel.Text = user.Email;
 
             if (User.IsInRole("User"))
             {
