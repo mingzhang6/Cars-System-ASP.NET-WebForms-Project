@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 
-namespace CarsSystem.WebForms.Client.Helpers
+namespace CarsSystem.Auth
 {
     public static class IdentityHelper
     {

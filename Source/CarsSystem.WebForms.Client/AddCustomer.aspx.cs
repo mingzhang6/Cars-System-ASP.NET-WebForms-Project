@@ -1,6 +1,6 @@
-﻿using CarsSystem.Data.Models;
+﻿using CarsSystem.Auth;
+using CarsSystem.Data.Models;
 using CarsSystem.Services.Data.Contracts;
-using CarsSystem.WebForms.Client.Helpers;
 using Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;

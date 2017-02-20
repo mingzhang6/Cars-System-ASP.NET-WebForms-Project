@@ -302,11 +302,9 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Cars\AllCars.aspx.cs">
       <DependentUpon>AllCars.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -394,7 +392,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\IdentityHelper.cs" />
     <Compile Include="ErrorPages\PageNotFound.aspx.cs">
       <DependentUpon>PageNotFound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -417,7 +414,6 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
     <Compile Include="ErrorPages\UnauthorizedAccess.aspx.cs">
       <DependentUpon>UnauthorizedAccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,6 +433,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CarsSystem.Auth\CarsSystem.Auth.csproj">
+      <Project>{C3CBAE86-2B65-4368-AAF6-49B1A85B78C4}</Project>
+      <Name>CarsSystem.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{f4747700-a6ca-44a7-8876-e47941d6d34f}</Project>
       <Name>Common</Name>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using CarsSystem.Auth;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Linq;

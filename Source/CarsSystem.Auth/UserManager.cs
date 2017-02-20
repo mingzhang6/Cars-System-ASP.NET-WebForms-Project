@@ -1,35 +1,17 @@
-﻿using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using CarsSystem.Data;
+using CarsSystem.Data.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using Microsoft.Owin.Security;
-using CarsSystem.Data;
-using CarsSystem.Data.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CarsSystem.WebForms.Client
+namespace CarsSystem.Auth
 {
-    public class EmailService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
-        }
-    }
-
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
-        }
-    }
-
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class UserManager : UserManager<User>
     {
         public UserManager(IUserStore<User> store)
@@ -82,22 +64,6 @@ namespace CarsSystem.WebForms.Client
                 manager.UserTokenProvider = new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
-        }
-    }
-
-    public class ApplicationSignInManager : SignInManager<User, string>
-    {
-        public ApplicationSignInManager(UserManager userManager, IAuthenticationManager authenticationManager) :
-            base(userManager, authenticationManager) { }
-
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(User user)
-        {
-            return user.GenerateUserIdentityAsync((UserManager)UserManager);
-        }
-
-        public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
-        {
-            return new ApplicationSignInManager(context.GetUserManager<UserManager>(), context.Authentication);
         }
     }
 }

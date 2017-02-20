@@ -1,4 +1,4 @@
-﻿using CarsSystem.WebForms.Client.Helpers;
+﻿using CarsSystem.Auth;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;
