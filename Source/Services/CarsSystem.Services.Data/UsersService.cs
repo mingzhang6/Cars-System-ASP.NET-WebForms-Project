@@ -33,6 +33,12 @@ namespace CarsSystem.Services.Data
             return this.userRepo.GetById(id);
         }
 
+        public IEnumerable<User> GetUserByEGN(long egn)
+        {
+            return this.userRepo.All()
+                                .Where(u => u.EGN == egn);
+        }
+
         public string GetUserId(Car car)
         {
             var result = this.GetAllUsers()
