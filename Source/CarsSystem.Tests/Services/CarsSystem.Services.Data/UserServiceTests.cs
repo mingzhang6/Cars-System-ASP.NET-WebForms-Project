@@ -135,5 +135,44 @@ namespace CarsSystem.Tests.Services.CarsSystem.Services.Data
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void UsersService_VerifyTheMethodGetUserByEGN_IsCalled_WhenPassedParametersAreCorrect()
+        {
+            var listOfUser = new List<User>
+            {
+                new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata", EGN = 6402234353 },
+                new User() { Id = "test1", FirstName = "Monti", LastName = "Picha", EGN = 6402234343 },
+                new User() { Id = "test2", FirstName = "Marin", LastName = "The hunter", EGN = 6406544343 },
+            };
+
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(c => c.All()).Returns(listOfUser);
+            var service = new UsersService(mockedRepo.Object);
+
+            service.GetUserByEGN(6402234353);
+
+            mockedRepo.Verify(m => m.All(), Times.Exactly(1));
+        }
+
+        [Test]
+        public void UsersService_MethodGetUserByEGN_ShouldReturnTheExpectedResult()
+        {
+            var listOfUser = new List<User>
+            {
+                new User() { Id = "test", FirstName = "Gosho", LastName = "Pochivkata", EGN = 6402234353 },
+                new User() { Id = "test1", FirstName = "Monti", LastName = "Picha", EGN = 6402234343 },
+                new User() { Id = "test2", FirstName = "Marin", LastName = "The hunter", EGN = 6406544343 },
+            };
+
+            var mockedRepo = new Mock<IRepository<User>>();
+            mockedRepo.Setup(c => c.All()).Returns(listOfUser);
+            var service = new UsersService(mockedRepo.Object);
+
+            var actualResult= service.GetUserByEGN(6402234353).ToList();
+            var expectedResult = 1;
+
+            Assert.AreEqual(expectedResult, actualResult.Count);
+        }
     }
 }
