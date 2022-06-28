@@ -1,6 +1,7 @@
 ﻿using CarsSystem.Services.Data.Contracts;
 using Ninject;
 using System;
+using System.Web.UI;
 
 namespace CarsSystem.WebForms.Client.Customers
 {
@@ -32,9 +33,17 @@ namespace CarsSystem.WebForms.Client.Customers
             this.PhoneNumberLabel.Text = user.PhoneNumber;
             this.EmailLabel.Text = user.Email;
 
-
-            var carId = CarsService.GetCarId(user);
-            this.CheckCustomerCarLabel.NavigateUrl = "~/Cars/CarDetails.aspx?id=" + carId;
+            try
+            {
+                var carId = CarsService.GetCarId(user);
+                this.CheckCustomerCarLabel.NavigateUrl = "~/Cars/CarDetails.aspx?id=" + carId;
+            }
+            catch(Exception ex)
+            {
+                this.CheckCustomerCarLabel.Text = "None";
+                this.CheckCustomerCarLabel.Style[HtmlTextWriterStyle.TextDecoration] = "none";
+                this.CheckCustomerCarLabel.Style[HtmlTextWriterStyle.Color] = "red";
+            }
         }
     }
 }
